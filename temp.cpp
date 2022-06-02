@@ -33,17 +33,17 @@ string nextsmaller(string s){
         i = mid-1;
 
         if(n%2 == 1){
-            int v = s[mid] - '0' + carry;
-            carry = (s[mid] - '0' + carry)/10;
-            s[mid] = v + '0';
+            int v = int(s[mid] - '0') + carry;
+            carry = v/10;
+            s[mid] = char(v%10 + '0');
             j = mid+1;
         }else
             j=mid;
 
         while(i>=0){
-            int v = s[i] - '0' + carry;
-            carry = (s[i] - '0' + carry)/10;
-            s[i] = v + '0';
+            int v = int(s[i] - '0') + carry;
+            carry = v/10;
+            s[i] = char(v%10 + '0');
             s[j] = s[i];
             j++;
             i--;
